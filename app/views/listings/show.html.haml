@@ -1,0 +1,5 @@
+%h1= @listing.title
+%h5
+	Posted 
+	= time_ago_in_words(@listing.created_at)
+%p= @listing.description

@@ -1,0 +1,7 @@
+%h1 This is the header
+
+- @categories.each do |cat|
+	%h3= link_to cat.name, category_path(cat)
+	%ul
+		- cat.subcategories.each do |sub|
+			%li= link_to sub.name, category_subcategory_path(cat, sub)

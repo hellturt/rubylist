@@ -1,0 +1,4 @@
+%h2= @category.name
+
+- @category.subcategories.each do |sub|
+	= link_to sub.name, category_subcategory_path(@category, sub)
