@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+
+
+// $('#listing_category_id').change(function(){
+// 	alert("aaaaaa");
+// });

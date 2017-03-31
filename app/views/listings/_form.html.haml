@@ -1,7 +1,11 @@
+
+
 = simple_form_for @listing do |f|
 	%div.col-md-6
+
 		= f.input :category_id, collection: Category.all, prompt: "Select Category"
-		= f.input :subcategory_id, collection: Subcategory.all, prompt: "Select Subcategory"
+		= f.input :subcategory_id, collection: Category.all, as: :grouped_select, group_label: :category_id, group_method: :subcategories
+
 		= f.input :title
 		= f.input :description, input_html: {rows:10}
 	%div.col-md-6
@@ -10,3 +14,11 @@
 		= f.input :zipcode
 	%div.col-md-12
 		= f.button :submit
+
+
+
+
+
+
+
+		/ = f.input :subcategory_id, collection: Subcategory.all, prompt: "Select Subcategory"

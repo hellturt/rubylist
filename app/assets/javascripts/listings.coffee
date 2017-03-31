@@ -1,3 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+
+jQuery ->
+	sub = $('#listing_subcategory_id').html()
+	
+	$('#listing_category_id').on "change", ->
+		category = $('#listing_category_id :selected').text()
+		options = $(sub).filter("optgroup[label='#{category}']").html()
+		console.log(options)
+
+		if options
+			$('#listing_subcategory_id').html(options)
+		else
+			$('#listing_subcategory_id').hide()
+
