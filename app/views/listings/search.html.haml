@@ -2,11 +2,16 @@
 
 - if @listings.present?
 	- @listings.each do |listing|
-		%div
-			%div.col-xs-3
+		%div.row
+			%div.col-xs-2
 				= listing.created_at.strftime('%d %b, %Y')
-			%div.col-xs-6
+			%div.col-xs-4
 				= link_to listing.title, listing
+			%div.col-xs-3
+				posted in
+				= link_to listing.category.name, listing.category
+				\/
+				= link_to listing.subcategory.name, category_subcategory_path(listing.category.id, listing.subcategory.id)
 			%div.col-xs-3
 				= listing.city
 				,
