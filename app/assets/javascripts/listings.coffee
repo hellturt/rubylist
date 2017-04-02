@@ -1,5 +1,6 @@
 
 jQuery ->
+	$('#listing_subcategory_id').parent().hide()
 	sub = $('#listing_subcategory_id').html()
 	
 	$('#listing_category_id').on "change", ->
@@ -9,6 +10,7 @@ jQuery ->
 
 		if options
 			$('#listing_subcategory_id').html(options)
+			$('#listing_subcategory_id').parent().show()
 		else
-			$('#listing_subcategory_id').hide()
+			$('#listing_subcategory_id').fadeIn()
 

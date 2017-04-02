@@ -1,4 +1,23 @@
-%h2= @category.name
+%ol.breadcrumb
+	%li= link_to "Rubylist", root_path
+	%li= @category.name
 
-- @category.subcategories.each do |sub|
-	= link_to sub.name, category_subcategory_path(@category, sub)
+%div.btn-group
+	- @category.subcategories.each do |sub|
+		%div.btn.btn-default
+			= link_to sub.name, category_subcategory_path(@category, sub)
+%br
+%br
+- if @listings.present?
+	- @listings.each do |listing|
+		%div
+			%div.col-xs-3
+				= listing.created_at.strftime('%d %b, %Y')
+			%div.col-xs-6
+				= link_to listing.title, listing
+			%div.col-xs-3
+				= listing.city
+				,
+				= listing.state
+- else
+	%p There's no post present for this category

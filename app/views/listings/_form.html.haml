@@ -2,16 +2,15 @@
 
 = simple_form_for @listing do |f|
 	%div.col-md-6
-
-		= f.input :category_id, collection: Category.all, prompt: "Select Category"
+		= f.input :category_id, collection: Category.all, prompt: "Select Category", label: false
 		= f.input :subcategory_id, collection: Category.all, as: :grouped_select, group_label: :category_id, group_method: :subcategories
 
-		= f.input :title
-		= f.input :description, input_html: {rows:10}
+		= f.input :title, label: false, input_html: {placeholder: "Title"}
+		= f.input :description, label: false, input_html: {rows:10, placeholder:"Description"}
 	%div.col-md-6
-		= f.input :city
-		= f.input :state
-		= f.input :zipcode
+		= f.input :city, label: false, input_html: {placeholder: "City"}
+		= f.input :state, label: false, input_html: {placeholder: "State"}
+		= f.input :zipcode, label: false, input_html: {placeholder: "zipcode"}
 	%div.col-md-12
 		= f.button :submit
 

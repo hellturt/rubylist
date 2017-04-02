@@ -1,5 +1,13 @@
-%h1= @listing.title
-%h5
-	Posted 
-	= time_ago_in_words(@listing.created_at)
+%ol.breadcrumb
+	%li= link_to "Rubylist", root_path
+	%li= link_to @sub.category.name, @sub.category
+	%li= @sub.name
+
+%div.page-header
+	%h1
+		= @listing.title
+		%small
+			Posted 
+			= time_ago_in_words(@listing.created_at)
+			ago
 %p= @listing.description

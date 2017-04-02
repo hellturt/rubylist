@@ -1,0 +1,19 @@
+- if @listings.present?
+	- @listings.each do |listing|
+		%div
+			%div.col-xs-2
+				= listing.created_at.strftime('%d %b, %Y')
+			%div.col-xs-4
+				= link_to listing.title, listing
+			%div.col-xs-3
+				= listing.city
+				,
+				= listing.state
+			%div.col-xs-3
+				%div.btn-group
+					%div.btn.btn-default
+						= link_to "Edit Post", edit_listing_path(listing)
+					%div.btn.btn-default
+						= link_to "Delete Post", listing, method: :delete
+- else
+	%p There's no post present for this category

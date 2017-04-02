@@ -19,14 +19,15 @@ gem 'simple_form'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem "font-awesome-rails"
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
-
+gem 'geocoder'
+gem 'devise'
 
 
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  # gem 'byebug', platform: :mri
 end
 
 group :development do

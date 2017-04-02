@@ -1,7 +1,4 @@
-%ol.breadcrumb
-	%li= link_to "Rubylist", root_path
-	%li= link_to @sub.category.name, @sub.category
-	%li= @sub.name
+
 
 - if @listings.present?
 	- @listings.each do |listing|
