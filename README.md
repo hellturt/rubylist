@@ -1,24 +1,9 @@
-# README
+### README
+# Rubylist : Craiglist Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails practice project.
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version : 2.2.4
+* Rails version : 5.0.2
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
