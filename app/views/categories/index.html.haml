@@ -1,18 +1,28 @@
 %div.well
 	%h4 Search rubylist
-	= form_tag search_listings_path, method: :get do |f|
-		= text_field_tag :search, nil, placeholder: 'search'
-		= text_field_tag :location, nil, placeholder: 'near'
-		= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id ]})
-		= submit_tag '>'
+	= form_tag search_listings_path, class: 'form-inline', method: :get do |f|
+		%div.form-group
+			= text_field_tag :search, nil, placeholder: 'search', class: "form-control"
+		%div.form-group
+			= text_field_tag :location, nil, placeholder: 'near', class: "form-control"
+		%div.form-group
+			= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id ]}), class: "form-control"
+		%div.form-group
+			= submit_tag '>', class: 'btn btn-default'
 
 %div.row
 	- @categories.each do |cat|
 		%div.col-md-4
 			%div.panel.panel-default
 				%div.panel-heading
-					%h3.panel-title= link_to cat.name, category_path(cat)
+					%h3.panel-title
+						= link_to cat.name, category_path(cat)
+						%span.label.label-primary
+							= cat.listings.count
 				%div.panel-body
 					%ul
 						- cat.subcategories.each do |sub|
-							%li= link_to sub.name, category_subcategory_path(cat, sub)
+							%li
+								= link_to sub.name, category_subcategory_path(cat, sub)
+								%span.label.label-default
+									= sub.listings.count

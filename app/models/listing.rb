@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
-	belongs_to :category, required: false
-	belongs_to :subcategory, required: false
+	belongs_to :category
+	belongs_to :subcategory
 	belongs_to :user
 	
 	validates :user_id, presence: true

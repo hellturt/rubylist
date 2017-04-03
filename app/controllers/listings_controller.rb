@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
 	before_action :find_list, only: [:show, :edit, :update, :destroy]
 	before_action :correct_user, only: [:edit, :update, :destroy]
-	before_action :authenticate_user!, except: [:show]
+	before_action :authenticate_user!, except: [:show, :search]
 
 	def show
 		@sub = @listing.subcategory
